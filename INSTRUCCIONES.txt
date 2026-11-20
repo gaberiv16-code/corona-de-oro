@@ -1,0 +1,24 @@
+CORONA DE ORO — INSTRUCCIONES
+
+1. Extrae este ZIP en tu teléfono o computadora.
+2. En GitHub, abre el repositorio corona-de-oro.
+3. Entra en Add file > Upload files.
+4. Sube los archivos que están DENTRO de esta carpeta (especialmente index.html), no el ZIP.
+5. Pulsa Commit changes.
+6. Para publicar: Settings > Pages > Build and deployment > Deploy from a branch > Branch: main > Folder: /(root) > Save.
+7. Espera unos minutos. GitHub mostrará la dirección pública de tu catálogo.
+
+FIREBASE YA ESTÁ CONFIGURADO EN index.html.
+Las reglas Firestore deben coincidir con firestore.rules. El UID de administrador ya está restringido a la cuenta autorizada.
+
+Acceso de administrador:
+- Abre tu catálogo publicado.
+- Baja a “Administración de inventario”.
+- Inicia sesión con el correo y contraseña que registraste en Firebase Authentication.
+- Cambia precio o stock y pulsa GUARDAR CAMBIOS.
+
+Importante:
+- No compartas tu contraseña.
+- Los clientes pueden ver el catálogo; solo la cuenta autorizada puede escribir en el inventario.
+- La página incluye cinco productos de ejemplo con precio inicial de $45 y stock de 5. Ajusta esos datos desde Administración.
+- Los dibujos de reloj son ilustraciones provisionales; puedes reemplazarlos por fotos reales cuando tengas las imágenes.

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CORONA DE ORO | Catálogo</title>
+<meta name="description" content="Catálogo oficial de CORONA DE ORO">
+<style>
+:root{--cream:#f7f1e5;--paper:#fffdf8;--gold:#b38a42;--gold2:#d5b66e;--green:#263d32;--ink:#28251f;--muted:#746d60}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+header{background:var(--green);color:#f9f0dd;text-align:center;padding:30px 16px 24px;border-bottom:5px solid var(--gold)}
+.emblem{width:68px;height:68px;border:1px solid var(--gold2);border-radius:50%;display:grid;place-items:center;margin:0 auto 9px;color:var(--gold2);font-size:32px}
+.brand{font-size:clamp(25px,6vw,38px);letter-spacing:4px;margin:0}.tag{font:11px Arial,sans-serif;letter-spacing:3px;color:#dfc995;margin-top:7px}
+nav{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;padding:13px;background:#eee4d1;font:12px Arial,sans-serif;letter-spacing:1px}
+nav a{color:var(--green);text-decoration:none}
+main{max-width:1000px;margin:auto;padding:28px 16px 60px}
+.intro{text-align:center;margin:8px auto 28px;max-width:650px}.eyebrow{font:11px Arial,sans-serif;letter-spacing:3px;color:var(--gold);text-transform:uppercase}
+h2{font-weight:normal;color:var(--green);font-size:28px;margin:8px 0}.intro p{color:var(--muted);line-height:1.6}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.product{background:var(--paper);border:1px solid #e6dac3;padding:12px;text-align:center;box-shadow:0 3px 12px #5a452010}
+.watch{height:160px;background:linear-gradient(135deg,#eee5d4,#d8c6a6);display:grid;place-items:center;position:relative;overflow:hidden}
+.watch:before{content:"";width:55px;height:132px;border-radius:28px;background:linear-gradient(90deg,#272727,#777,#252525);position:absolute}
+.watch:after{content:"";width:75px;height:75px;border-radius:50%;border:8px solid #c49a4e;background:radial-gradient(circle,#f7f1df 0 42%,#252b29 44% 48%,#e6d4ad 50%);z-index:1;box-shadow:0 2px 8px #3338}
+.product h3{font-weight:normal;font-size:17px;margin:12px 0 5px}.price{color:var(--gold);font: bold 17px Arial,sans-serif}.stock{font:12px Arial,sans-serif;color:var(--muted);margin:7px 0}
+button{border:0;background:var(--green);color:#fff8e9;padding:11px 14px;cursor:pointer;font:12px Arial,sans-serif;letter-spacing:.5px}button:disabled{opacity:.45;cursor:not-allowed}
+#cart{background:var(--paper);border:1px solid #e6dac3;margin-top:26px;padding:18px}#cart h3{margin-top:0;color:var(--green);font-weight:normal}
+.cartline{display:flex;justify-content:space-between;gap:10px;font:13px Arial,sans-serif;padding:6px 0}
+.section{margin-top:44px;text-align:center}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.step{background:#eee4d1;padding:18px 12px}.step b{display:block;color:var(--gold);font-size:23px;margin-bottom:8px}.step span{font:13px Arial,sans-serif;color:var(--green)}
+.contact{line-height:1.9;color:var(--muted)}.contact a{color:var(--green)}
+footer{text-align:center;background:var(--green);color:#dfd1b5;padding:22px;font:11px Arial,sans-serif;letter-spacing:1px}
+#admin{margin-top:45px;background:#eee4d1;padding:18px}#admin h3{font-weight:normal;color:var(--green)}#admin input{padding:9px;border:1px solid #cbbd9f;margin:4px;max-width:100%}.adminrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:8px 0;font:13px Arial,sans-serif}
+.hidden{display:none!important}
+@media(max-width:560px){.products{gap:10px}.product{padding:8px}.watch{height:130px}.watch:before{height:110px}.watch:after{width:65px;height:65px}.steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="emblem">♛</div><h1 class="brand">CORONA DE ORO</h1><div class="tag">ELEGANCIA · DISTINCIÓN · ESTILO</div></header>
+<nav><a href="#catalogo">CATÁLOGO</a><a href="#pedidos">CÓMO PEDIR</a><a href="#contacto">CONTACTO</a></nav>
+<main>
+<section class="intro"><div class="eyebrow">Colección seleccionada</div><h2>Encuentra tu estilo</h2><p>Descubre nuestra selección de relojes. Consulta disponibilidad y realiza tu pedido directamente por WhatsApp.</p></section>
+<section id="catalogo"><div class="products" id="products"></div></section>
+<section id="cart"><h3>Tu pedido</h3><div id="cartitems"><p class="contact">Aún no has agregado productos.</p></div><div class="cartline"><b>Total</b><b id="total">$0</b></div><button id="order" onclick="sendOrder()" disabled>HACER PEDIDO POR WHATSAPP</button></section>
+<section class="section" id="pedidos"><div class="eyebrow">Compra fácil y segura</div><h2>Cómo pedir</h2><div class="steps"><div class="step"><b>01</b><span>Elige tu reloj favorito</span></div><div class="step"><b>02</b><span>Confirma disponibilidad por WhatsApp</span></div><div class="step"><b>03</b><span>Coordina el pago y la entrega</span></div></div></section>
+<section class="section" id="contacto"><div class="eyebrow">Estamos para ayudarte</div><h2>Contáctanos</h2><p class="contact">WhatsApp: <a href="https://wa.me/584246949426">+58 424-6949426</a><br>Instagram: <a href="https://instagram.com/CORONADEOROVE">@CORONADEOROVE</a><br>Venezuela</p></section>
+<section id="admin"><h3>Administración de inventario</h3><p class="contact">Solo la cuenta autorizada puede modificar precios y existencias.</p>
+<div id="login"><input id="email" type="email" placeholder="Correo de administrador"><input id="password" type="password" placeholder="Contraseña"><button onclick="login()">INICIAR SESIÓN</button><p id="loginmsg" class="contact"></p></div>
+<div id="panel" class="hidden"><p id="adminmsg" class="contact"></p><div id="editors"></div><button onclick="saveAll()">GUARDAR CAMBIOS</button> <button onclick="logout()">CERRAR SESIÓN</button></div>
+</section>
+</main><footer>© CORONA DE ORO · VENEZUELA</footer>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, doc, getDoc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+const firebaseConfig = {
+ apiKey: "AIzaSyBFP5dU3mdE0zbbQf-_xlxR_vuvT_pN0nk",
+ authDomain: "corona-de-oro.firebaseapp.com",
+ projectId: "corona-de-oro",
+ storageBucket: "corona-de-oro.firebasestorage.app",
+ messagingSenderId: "287508560954",
+ appId: "1:287508560954:web:c3a596e984f8bc92da4903"
+};
+const app=initializeApp(firebasebaseSafe(firebaseConfig));
+function firebaseSafe(c){return c}
+const db=getFirestore(app),auth=getAuth(app),ref=doc(db,"store","catalog");
+const defaults=[
+ {id:"modelo-1",name:"Clásico Dorado",price:45,stock:5},
+ {id:"modelo-2",name:"Elegance Silver",price:45,stock:5},
+ {id:"modelo-3",name:"Royal Black",price:45,stock:5},
+ {id:"modelo-4",name:"Gold Edition",price:45,stock:5},
+ {id:"modelo-5",name:"Luxury Chrono",price:45,stock:5}
+];
+let products=defaults,cart={},user=null;
+const money=n=>"$"+Number(n).toFixed(2);
+function render(){
+ document.getElementById("products").innerHTML=products.map((p,i)=>`<article class="product"><div class="watch"></div><h3>${esc(p.name)}</h3><div class="price">${money(p.price)}</div><div class="stock">${p.stock>0?`Disponible: ${p.stock}`:"Agotado"}</div><button ${p.stock<1?"disabled":""} onclick="add(${i})">AGREGAR AL PEDIDO</button></article>`).join("");
+ renderCart();
+}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+window.add=(i)=>{let p=products[i];if((cart[p.id]||0)<p.stock)cart[p.id]=(cart[p.id]||0)+1;renderCart()};
+function renderCart(){let entries=products.filter(p=>cart[p.id]);document.getElementById("cartitems").innerHTML=entries.length?entries.map(p=>`<div class="cartline"><span>${esc(p.name)} × ${cart[p.id]}</span><span>${money(p.price*cart[p.id])} <button onclick="removeItem('${p.id}')" style="padding:4px 8px">−</button></span></div>`).join(""):'<p class="contact">Aún no has agregado productos.</p>';let total=entries.reduce((s,p)=>s+p.price*cart[p.id],0);document.getElementById("total").textContent=money(total);document.getElementById("order").disabled=!entries.length}
+window.removeItem=id=>{if(cart[id]>1)cart[id]--;else delete cart[id];renderCart()};
+window.sendOrder=()=>{let lines=products.filter(p=>cart[p.id]).map(p=>`${p.name} x${cart[p.id]} - ${money(p.price*cart[p.id])}`);let total=products.reduce((s,p)=>s+(cart[p.id]||0)*p.price,0);let msg=encodeURIComponent("Hola, quiero realizar este pedido en CORONA DE ORO:\n"+lines.join("\n")+"\nTotal: "+money(total));location.href="https://wa.me/584246949426?text="+msg};
+function renderEditors(){document.getElementById("editors").innerHTML=products.map((p,i)=>`<div class="adminrow"><b>${esc(p.name)}</b><label>Precio $ <input id="price${i}" type="number" min="0" step=".01" value="${p.price}" style="width:85px"></label><label>Stock <input id="stock${i}" type="number" min="0" step="1" value="${p.stock}" style="width:75px"></label></div>`).join("")}
+window.login=async()=>{let m=document.getElementById("loginmsg");try{await signInWithEmailAndPassword(auth,document.getElementById("email").value,document.getElementById("password").value);m.textContent="Sesión iniciada."}catch(e){m.textContent="No se pudo iniciar sesión. Verifica el correo y la contraseña."}};
+window.logout=()=>signOut(auth);
+onAuthStateChanged(auth,u=>{user=u;document.getElementById("login").classList.toggle("hidden",!!u);document.getElementById("panel").classList.toggle("hidden",!u);if(u){document.getElementById("adminmsg").textContent="Sesión de administrador activa.";renderEditors()}});
+window.saveAll=async()=>{try{products=products.map((p,i)=>({...p,price:Number(document.getElementById("price"+i).value),stock:Math.max(0,Math.floor(Number(document.getElementById("stock"+i).value)))}));await setDoc(ref,{products});render();renderEditors();document.getElementById("adminmsg").textContent="Inventario guardado correctamente."}catch(e){document.getElementById("adminmsg").textContent="No se pudo guardar. Comprueba tu conexión y permisos."}};
+onSnapshot(ref,s=>{if(s.exists()&&Array.isArray(s.data().products)){products=s.data().products;render();if(user)renderEditors()}else{render()}},e=>console.error(e));
+render();
+</script>
+</body></html>
